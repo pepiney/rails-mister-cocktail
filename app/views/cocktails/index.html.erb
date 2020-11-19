@@ -1,0 +1,15 @@
+<h1>My Best cocktails</h1>
+<h2 class= btn btn-flat><%= link_to "Add a cocktail recipes", new_cocktail_path  %></h2>
+
+<ul>
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-product col-4">
+        <img src="https://assets.afcdn.com/recipe/20180705/80255_w2048h1536c1cx2774cy1849.webp" />
+        <div class="card-product-infos">
+      <li><%= link_to cocktail.name, cocktail_path(cocktail)  %></li>
+          </div>
+  </div>
+    <% end %>
+</ul>
+
+
