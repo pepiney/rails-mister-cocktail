@@ -1,10 +1,18 @@
-<h1>Detail of Cocktail</h1>
+<h1><%= @cocktail.name %></h1>
 
+          <% @cocktail.doses.each do |dose| %>
+            <tr>
+              <td><%= dose.ingredient.name %></td>
+              <td><%= dose.description %></td>
+              <td>
 
-<h2>Name: <%= @cocktail.name %> </h2>
+                  <i class="fa fa-trash destroy_dose"></i>
 
+              </td>
+            </tr>
+          <% end %>
 
-
+<%= link_to "add ingrdient", new_cocktail_dose_path(@cocktail)  %>;
 <%= link_to "Home", cocktails_path  %> <br>
 
 
