@@ -4,11 +4,11 @@
   <div class="row">
     <div class="col-4">
       <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+        <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
         <%= f.input :description %>
-        <%= f.association :ingredient, collection: Ingredient.all %>
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
-      <%= link_to "Finish", cocktail_path(@cocktail) %>
+      <%= link_to "Return", cocktail_path(@cocktail) %>
     </div>
   </div>
 </div>
