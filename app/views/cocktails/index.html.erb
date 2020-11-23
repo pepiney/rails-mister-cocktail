@@ -4,7 +4,12 @@
 <ul>
     <% @cocktails.each do |cocktail| %>
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://assets.afcdn.com/recipe/20180705/80255_w2048h1536c1cx2774cy1849.webp" alt="Card image cap">
+        <% if cocktail.photo? %>
+          <% background_url = 'https://assets.afcdn.com/recipe/20180705/80255_w2048h1536c1cx2774cy1849.webp'%>
+        <% else %>
+          <% background_url = 'https://assets.afcdn.com/recipe/20180705/80255_w2048h1536c1cx2774cy1849.webp' %>
+        <% end %>
+  <img class="card-img-top" src="<%= background_url %>" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">
           <li><%= link_to cocktail.name, cocktail_path(cocktail)  %></li>
@@ -20,3 +25,4 @@
 
 <%= cl_image_tag("fx3222tnr38zjg5yqo6t.jpg",
       width: 400, height: 300, crop: :fill) %>
+
